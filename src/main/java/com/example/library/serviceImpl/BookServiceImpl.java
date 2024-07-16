@@ -8,6 +8,9 @@ import com.example.library.exception.BookNotSaveException;
 import com.example.library.repository.BookRepository;
 import com.example.library.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -97,6 +100,20 @@ public class BookServiceImpl implements BookService {
 
         bookRepository.save(book);
         return book;
+    }
+
+    @Override
+    public Page<Book> getAllBooks_pagination(String title, String author, Double priceMin, Double priceMax, Integer yearMin, Integer yearMax, Boolean isDeleted, int page, int size) {
+        // Adjust page number for zero-indexed pagination
+        Pageable pageable = PageRequest.of(page - 1, size);
+
+        // If isDeleted is null, default to false
+        if (isDeleted == null) {
+            isDeleted = false;
+        }
+
+        return bookRepository.findAllWithFilters(title, author, priceMin, priceMax,
+                yearMin, yearMax, isDeleted, pageable);
     }
 
 //    @Override

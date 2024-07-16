@@ -1,8 +1,12 @@
 package com.example.library.repository;
 
 import com.example.library.entity.Book;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -13,6 +17,24 @@ public interface BookRepository extends JpaRepository<Book, Integer>, JpaSpecifi
     List<Book> findByIsDeleted(Boolean isDeleted);
 
     Book findByIdAndIsDeleted(Integer id, Boolean isDeleted);
+
+    // Query to get all books with pagination and filters
+    @Query("SELECT b FROM Book b WHERE (:title is null or b.title like %:title%) " +
+            "AND (:author is null or b.author like %:author%) " +
+            "AND (:priceMin is null or b.price >= :priceMin) " +
+            "AND (:priceMax is null or b.price <= :priceMax) " +
+            "AND (:yearMin is null or b.yearPublished >= :yearMin) " +
+            "AND (:yearMax is null or b.yearPublished <= :yearMax) " +
+            "AND (:isDeleted is null or b.isDeleted = :isDeleted)")
+    Page<Book> findAllWithFilters(
+            @Param("title") String title,
+            @Param("author") String author,
+            @Param("priceMin") Double priceMin,
+            @Param("priceMax") Double priceMax,
+            @Param("yearMin") Integer yearMin,
+            @Param("yearMax") Integer yearMax,
+            @Param("isDeleted") Boolean isDeleted,
+            Pageable pageable);
 
 //    List<Book> findAllById(Iterable<Integer> integers);
 

@@ -1,5 +1,6 @@
 package com.example.library.entity;
 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -25,6 +26,6 @@ public class User {
     private boolean active;
     private Date doj;
     private String Gender;
-    private List<UserCredential> userCredentialList;
+
 
 }

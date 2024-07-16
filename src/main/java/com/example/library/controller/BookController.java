@@ -7,6 +7,7 @@ import com.example.library.exception.BookNotFoundException;
 import com.example.library.exception.BookNotSaveException;
 import com.example.library.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,8 +24,23 @@ public class BookController {
     }
 
     @GetMapping()
-    public List<Book> getAllBooks() {
+    public List<Book> getAllBooks_pagination() {
         return bookService.getAllBooks();
+    }
+    @GetMapping("/getAllBooks")
+    public Page<Book> getAllBooks(
+            @RequestParam(required = false) String title,
+            @RequestParam(required = false) String author,
+            @RequestParam(required = false) Double priceMin,
+            @RequestParam(required = false) Double priceMax,
+            @RequestParam(required = false) Integer yearMin,
+            @RequestParam(required = false) Integer yearMax,
+            @RequestParam(required = false) Boolean isDeleted,
+            @RequestParam(defaultValue = "1") int page,
+            @RequestParam(defaultValue = "10") int size) {
+
+        return bookService.getAllBooks_pagination(title, author, priceMin, priceMax, yearMin,
+                yearMax, isDeleted, page, size);
     }
 
     @DeleteMapping("/deletBookByID/{id}")

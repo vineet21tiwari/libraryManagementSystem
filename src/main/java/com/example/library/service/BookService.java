@@ -5,6 +5,7 @@ import com.example.library.DTO.BookResponseDto;
 import com.example.library.entity.Book;
 import com.example.library.exception.BookNotFoundException;
 import com.example.library.exception.BookNotSaveException;
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 
@@ -19,6 +20,8 @@ public interface BookService {
     BookResponseDto fetchBookByID(Integer id) throws BookNotFoundException;
 
     Book updateBook(Integer id, BookRequestDto bookRequestDto);
+
+    Page<Book> getAllBooks_pagination(String title, String author, Double priceMin, Double priceMax, Integer yearMin, Integer yearMax, Boolean isDeleted, int page, int size);
 
 //    Page<Book> getAllBooks_Pegination(String title,String author, Double minPrice, Double maxPrice, Integer minYear, Integer maxYear,
 //                                      String sortBy, int page, int size);
