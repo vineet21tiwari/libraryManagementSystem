@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/catalog-service/catalog-service.iml" filepath="$PROJECT_DIR$/catalog-service/catalog-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/eureka-server/eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libraryManagementSystem/catalog-service/library.iml" filepath="$PROJECT_DIR$/libraryManagementSystem/catalog-service/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/library-managment-system.iml" filepath="$PROJECT_DIR$/.idea/library-managment-system.iml" />
+      <module fileurl="file://$PROJECT_DIR$/member-service/member-service.iml" filepath="$PROJECT_DIR$/member-service/member-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/transactions-service/transactions-service.iml" filepath="$PROJECT_DIR$/transactions-service/transactions-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zuul-gatway/zuul-gatway.iml" filepath="$PROJECT_DIR$/zuul-gatway/zuul-gatway.iml" />
+    </modules>
+  </component>
+</project>
