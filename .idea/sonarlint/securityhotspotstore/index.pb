@@ -17,7 +17,5 @@ F
 ]member-service/src/main/java/com/example/library/member_service/MemberServiceApplication.java,9\7\9791f9160945437a0fb37e764dfe55f796a7abc6
 Ñ
 Tzuul-gatway/src/main/java/com/example/library/zuul/gatway/ZuulGatwayApplication.java,d\9\d9c5689138a135b2c93a2f9c98db85e5fbac6d38
-i
-9catalog-service/src/main/resources/application.properties,5\d\5dafb9f0653e796cef360f893de25169b84fd2e0
 ê
 `catalog-service/src/main/java/com/example/library/catalog/service/CatalogServiceApplication.java,4\a\4adebea218ac4185165f97003175e7bd406b22fd

@@ -1,7 +1,9 @@
-package com.example.library.entity;
+package com.example.library.catalog.service.entity;
 
-import com.example.library.catalog.service.entity.Author;
+import com.example.library.transactions.service.entity.Transactions;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Book {
@@ -9,7 +11,7 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String title;
-    //    private String author;
+//    private String author;
     private Double price;
     private Integer yearPublished;
 
@@ -19,9 +21,13 @@ public class Book {
     @JoinColumn(name= "author_id", referencedColumnName = "id")
     private Author author;
 
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "publisher_id", referencedColumnName = "id")
-    private com.example.library.entity.Publisher publisher;
+    private Publisher publisher;
+
+    @Transient
+    private List<Transactions> transactionsList;
 
     public void setId(Integer id) {
         this.id = id;
@@ -83,5 +89,5 @@ public class Book {
 
 //    public void setAuthor(String author) {
 //        this.author = author;
-}
+    }
 
