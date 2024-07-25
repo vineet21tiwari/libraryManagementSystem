@@ -17,10 +17,11 @@ public class Book {
 
     private Boolean isDeleted;
 
+    private Integer rating;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name= "author_id", referencedColumnName = "id")
     private Author author;
-
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "publisher_id", referencedColumnName = "id")

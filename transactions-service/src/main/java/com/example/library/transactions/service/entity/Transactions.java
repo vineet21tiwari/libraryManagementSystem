@@ -1,14 +1,13 @@
 package com.example.library.transactions.service.entity;
 
-import com.example.library.member_service.entity.Members;
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-//import org.springframework.data.annotation.Id;
-import jakarta.persistence.*;
 
-import java.awt.print.Book;
 import java.util.Date;
 
 @Entity
@@ -24,14 +23,6 @@ public class Transactions {
     private Date dueDate;
     private Date returnDate;
 
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "book_id", referencedColumnName = "id")
-//    private Book book;
-//
-//
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "member_id", referencedColumnName = "id")
-//    private Members members;
 }
 
 

@@ -1,12 +1,14 @@
 package com.example.library.member_service.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
-import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -23,7 +25,6 @@ public class Members  {
     private Integer phone;
     private String email;
     private Date membershipDate;
-
-    @Transient
-    private List<Transactions> transactionsList;
+//    @Transient
+//    private List<Transactions> transactionsList;
 }

@@ -71,7 +71,6 @@ public class MembersServiceImpl implements MembersService {
         members.setFirstName(updatedMember.getFirstName());
         members.setLastName(updatedMember.getLastName());
         members.setMembershipDate(updatedMember.getMembershipDate());
-        members.setTransactionsList(members.getTransactionsList());
 
         return membersRepository.save(members);
     }

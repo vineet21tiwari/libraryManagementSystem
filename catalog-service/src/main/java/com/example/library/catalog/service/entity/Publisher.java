@@ -1,12 +1,11 @@
 package com.example.library.catalog.service.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -19,4 +18,7 @@ public class Publisher {
     private String name;
     private String address;
     private String email;
+
+    @OneToMany
+    List<Book> bookList;
 }
