@@ -11,12 +11,14 @@
         <module name="library" />
         <module name="zuul-gatway" />
         <module name="eureka-server" />
-        <module name="transactions-service" />
         <module name="catalog-service" />
+        <module name="transactions-service" />
       </profile>
+      <profile name="Disabled" enabled="true" />
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="catalog-service" target="17" />
+      <module name="config-server" target="17" />
       <module name="eureka-server" target="17" />
       <module name="library" target="17" />
       <module name="library-managment-system" target="1.5" />
@@ -28,6 +30,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="catalog-service" options="-parameters" />
+      <module name="config-server" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
       <module name="library" options="-parameters" />
       <module name="member-service" options="-parameters" />

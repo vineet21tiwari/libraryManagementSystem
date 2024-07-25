@@ -10,6 +10,7 @@
         <module>member-service</module>
         <module>transactions-service</module>
         <module>zuul-gatway</module>
+
     </modules>
     <dependencyManagement>
         <dependencies>
